@@ -1,0 +1,15 @@
+html, body, #root {
+    height: 100%; /* 부모 요소의 높이를 100%로 설정 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+  }
+  
+
+.split-bar {
+    width: 5px;
+    background-color:  #1a1a1a;
+    cursor: col-resize;
+    position: relative;
+    z-index: 10;
+  }
+  
