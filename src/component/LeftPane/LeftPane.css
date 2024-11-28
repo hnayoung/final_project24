@@ -37,6 +37,27 @@
   transform: scale(1.1); /* 호버 시 크기 확대 */
 }
 
+.icon-profile {
+  width: 35px; /* 아이콘 크기 */
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px; /* 위로 당김 */
+}
+
+.icon-profile img {
+  width: 100%; /* 아이콘 이미지를 부모 크기에 맞게 */
+  height: auto; /* 비율 유지 */
+  border-radius: 5px; /* 이미지 모서리를 살짝 둥글게 */
+  transition: transform 0.2s ease; /* 호버 시 효과 */
+}
+
+.icon-profile img:hover {
+  transform: scale(1.1); /* 호버 시 크기 확대 */
+}
+
+
 
 .color-picker {
   margin-top: 20px;

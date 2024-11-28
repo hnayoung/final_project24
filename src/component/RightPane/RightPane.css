@@ -60,7 +60,7 @@
 
 .chat-input-wrapper {
   width: 100%;
-  padding: 0 20px; /* 좌우 20px 여백 추가 */
+  padding: 0 60px; /* 좌우 20px 여백 추가 */
   box-sizing: border-box; /* 패딩을 포함한 크기 계산 */
   position: sticky; /* 화면 하단에 고정 */
   bottom: 50px; /* 화면 하단으로부터의 간격 */
@@ -86,8 +86,6 @@
   height: 400px; /* 이미지 크기 */
   pointer-events: none; /* 이미지가 입력을 방해하지 않도록 설정 */
 }
-
-
 
 .chat-input {
   width: 100%;

@@ -11,6 +11,7 @@ const LeftPane = ({
   deleteChat,
   width,
   onResize,
+  profileImageUrl = "https://avatars.githubusercontent.com/u/9919?s=200&v=4", // 백엔드에서 제공하는 URL
 }) => {
   const [icons, setIcons] = useState([
     {
@@ -119,6 +120,14 @@ const LeftPane = ({
         <div className="icon" onClick={addNewIcon} style={{ cursor: "pointer" }}>
           +
         </div>
+        <div className="icon-profile">
+        <img
+          src="{profileImageUrl}" // 백엔드 url 
+          alt="profile"
+          className="icon-img"
+        />
+      </div>
+
       </div>
 
       {/* 콘텐츠 */}
