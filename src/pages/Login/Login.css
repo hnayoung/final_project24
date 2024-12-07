@@ -1,0 +1,77 @@
+/* 전체 레이아웃 스타일 */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 위쪽 정렬 */
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+    padding-top: 150px;
+    overflow: hidden; /* 스크롤 방지 */
+  }
+  
+  /* 로그인 박스 스타일 */
+  .login-box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    position: relative;
+    animation: slideUpFade 1s ease-out forwards; /* 애니메이션 추가 */
+    opacity: 0; /* 초기값 */
+  }
+  
+  /* 애니메이션 효과 */
+  @keyframes slideUpFade {
+    0% {
+      transform: translateY(50px); /* 아래에서 시작 */
+      opacity: 0; /* 투명도 0 */
+    }
+    100% {
+      transform: translateY(0); /* 원래 위치 */
+      opacity: 1; /* 완전히 보임 */
+    }
+  }
+  
+  /* 제목 스타일 */
+  .login-box h2 {
+    margin-bottom: 80px;
+    font-size: 30px;
+    color: #333333;
+  }
+  
+  .github-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid rgb(223, 221, 221);
+    border-radius: 5px;
+    padding: 5px 45px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    left: 18px; /* 오른쪽 이동 */
+    top: 10px; /* 아래로 이동 */
+}
+
+  /* GitHub 버튼 호버 효과 */
+  .github-button:hover {
+    transform: scale(1.1); /* 버튼 크기를 10% 확대 */
+  }
+  
+  /* GitHub 로고 스타일 */
+  .github-logo {
+    width: 50px;
+    height: 45px;
+    object-fit: contain;
+    width: 24px;
+    margin-right: 5px;
+  }
+  

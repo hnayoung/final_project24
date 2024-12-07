@@ -7,7 +7,7 @@ const Introduce = () => {
   const navigate = useNavigate();
 
   const handleStartChatting = () => {
-    navigate("/main"); // "/main" 페이지로 이동
+    navigate("/login"); // "/main" 페이지로 이동
   };
 
   return (
@@ -16,29 +16,16 @@ const Introduce = () => {
         <div className="intro-header animate"> {/* 애니메이션 클래스 추가 */}
           <div className="intro-logo">
             <img
-              src="https://github.com/hnayoung/image/blob/main/MUGE.png?raw=true" // 로고 이미지 URL
+              src="https://github.com/hnayoung/image/blob/main/logo.png?raw=true" // 로고 이미지 URL
               alt="Logo"
               className="intro-logo-img"
             />
-            <span className="intro-title">MUGE</span>
-          </div>
-          <div className="intro-nav">
-            <a href="/about" className="nav-link">
-              About
-            </a>
-            <a href="/demo" className="nav-link">
-              Demo
-            </a>
-            <a href="/contact" className="nav-link">
-              Contact
-            </a>
-            <button className="login-btn">Login</button>
-            <button className="signup-btn">Sign up</button>
+            <span className="intro-title">MUJE</span>
           </div>
         </div>
 
         <div className="intro-body animate"> {/* 애니메이션 클래스 추가 */}
-          <h1>MUGE Chatbot</h1>
+          <h1>MUJE Chatbot</h1>
           <p>Chat with our fine-tuned Ollama & StarCoder</p>
           <button className="start-btn" onClick={handleStartChatting}>
             Start Chatting →

@@ -199,3 +199,139 @@
   margin: 20px 0; /* 위아래 간격 */
   width: 100%; /* 전체 너비 */
 }
+
+.repository-btn {
+  width: 100%; /* 버튼을 전체 너비로 설정 */
+  padding: 10px 15px; /* 패딩 조정 */
+  border-radius: 8px; /* 둥근 모서리 */
+  border: none; /* 테두리 제거 */
+  background: #444; /* 회색 배경 */
+  color: white; /* 글자 색상 */
+  font-size: 16px; /* 글자 크기 */
+  font-weight: bold; /* 글자 두께 */
+  cursor: pointer; /* 마우스 포인터 변경 */
+  transition: all 0.3s ease; /* 애니메이션 효과 */
+  margin-bottom: 10px;
+}
+
+.repository-btn:hover {
+  background: #080808; /* 호버 시 배경색 변경 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 추가 */
+}
+
+.repository-btn:active {
+  transform: scale(0.95); /* 클릭 시 버튼 크기 줄이기 */
+}
+
+.repository-list {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+}
+
+.repository-list h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.repository-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.repository-list li {
+  margin-bottom: 10px;
+}
+
+.repository-list a {
+  color: #0078d4;
+  text-decoration: none;
+}
+
+.repository-list a:hover {
+  text-decoration: underline;
+}
+.repository-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #222;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.repository-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: white;
+}
+
+.repository-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.repository-item:hover {
+  background-color: #333;
+}
+
+.no-repositories {
+  text-align: center; /* 가운데 정렬 */
+  font-size: 14px; /* 글자 크기 */
+  color: #bbb; /* 회색 톤 */
+  padding: 10px 0; /* 위아래 간격 */
+  background-color: #2a2a2a; /* 배경 색상 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  min-height: 50px; /* 최소 높이 설정 */
+  display: flex; /* 플렉스 박스 사용 */
+  align-items: center; /* 세로 가운데 정렬 */
+  justify-content: center; /* 가로 가운데 정렬 */
+}
+.submit-btn {
+  width: 100%; /* 버튼을 전체 너비로 설정 */
+  padding: 10px 15px; /* 패딩 조정 */
+  border-radius: 8px; /* 둥근 모서리 */
+  border: none; /* 테두리 제거 */
+  background: linear-gradient(45deg, #28a745, #1e7e34); /* 그라데이션 배경 */
+  color: white; /* 글자 색상 */
+  font-size: 16px; /* 글자 크기 */
+  font-weight: bold; /* 글자 두께 */
+  cursor: pointer; /* 마우스 포인터 변경 */
+  margin-top: 20px; /* 리스트와의 간격 */
+  transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #1e7e34, #155724); /* 호버 시 배경색 변경 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 추가 */
+}
+
+.submit-btn:active {
+  transform: scale(0.95); /* 클릭 시 버튼 크기 줄이기 */
+}
+
+.chat-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.chat-summary:hover {
+  background-color: #2a2a2a;
+}
+
+/* 활성화된 채팅 스타일 */
+.chat-summary.active-chat {
+  background-color: #2a2a2a; /* hover 효과와 동일 */
+}

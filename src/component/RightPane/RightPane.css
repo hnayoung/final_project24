@@ -10,18 +10,20 @@
 
 .right-pane .content {
   flex: 1; /* 채팅 영역이 상단에 위치하도록 설정 */
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 20px;
 }
 
 /* Chat Container */
 .chat-container {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px; /* 메시지 간 간격 */
+  position: relative;
+  z-index: 1; /* 채팅을 앞으로 가져옴 */
 }
 
 /* 사용자 메시지 스타일 */
@@ -33,6 +35,7 @@
   border-radius: 15px;
   max-width: 60%;
   animation: fadeIn 0.3s ease-in-out;
+  margin-left: 50px; /* 왼쪽 여백 추가로 왼쪽으로 이동 */
 }
 
 /* 모델 응답 메시지 스타일 */
@@ -127,7 +130,7 @@
 
 .icon-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* 아이콘을 오른쪽 정렬 */
   width: 100%;
   align-items: center;
 }
@@ -135,13 +138,15 @@
 .icon-left {
   display: flex;
   gap: 10px; /* 아이콘 간 간격 */
+  margin-left: auto; /* 왼쪽 여백 추가 */
 }
 
-.attach-icon {
-  width: 30.1px;
+.submit-icon {
+  width: 32px;
   height: 32px;
   object-fit: contain;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .globe-icon {
@@ -156,4 +161,104 @@
   object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s ease;
+}
+
+.profile-container {
+  position: absolute; /* 오른쪽 상단 고정 */
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 왜곡 방지 */
+}
+
+
+/* 배경 로고 스타일 */
+.background-logo {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none; /* 로고가 클릭되지 않도록 설정 */
+}
+
+.muje-logo {
+  width: 500px;
+  height: auto;
+  pointer-events: none; /* 로고가 클릭되지 않도록 설정 */
+}
+
+.custom-modal-position .modal-dialog {
+  margin-top: 100px; /* 모달 창의 상단 여백 */
+  transform: translate(0, 0) !important;
+  max-width: 500px; /* 모달 창 너비 조정 */
+  border-radius: 8px; /* 둥근 모서리 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+  border: 1px solid #ddd; /* 테두리 색상 */
+}
+
+.custom-modal-position .modal-header {
+  background-color: #f9f9f9; /* 헤더 배경색 */
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-modal-position .modal-title {
+  font-size: 18px;
+  color: #333; /* 제목 색상 */
+}
+
+.custom-modal-position .modal-body {
+  padding: 20px;
+  font-size: 14px;
+  color: #555; /* 본문 텍스트 색상 */
+}
+
+.custom-modal-position .modal-footer {
+  display: flex;
+  justify-content: flex-end; /* 버튼 오른쪽 정렬 */
+  gap: 10px; /* 버튼 간격 */
+  padding: 15px;
+}
+
+.custom-modal-position .form-control {
+  border: 1px solid #ddd; /* 입력 필드 테두리 */
+  height: 40px; /* 입력 필드 높이 */
+  padding: 10px; /* 내부 여백 */
+}
+
+.custom-modal-position .btn {
+  border-radius: 0;
+  padding: 5px 20px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.custom-modal-position .btn-secondary {
+  background-color: #ccc; /* 닫기 버튼 색상 */
+  border: none;
+}
+
+.custom-modal-position .btn-primary {
+  background-color: #0078d4; /* 제출 버튼 색상 */
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .custom-modal-position .modal-dialog {
+    margin-top: 50px; /* 작은 화면에서 상단 여백 축소 */
+    max-width: 90%; /* 작은 화면에서 너비 축소 */
+  }
 }

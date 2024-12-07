@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LeftPane from "./component/LeftPane/LeftPane";
 import RightPane from "./component/RightPane/RightPane";
 import Introduce from "./pages/Introduce/Introduce";
+import Login from "./pages/Login/Login";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [activeChat, setActiveChat] = useState([]);
@@ -10,9 +13,10 @@ function App() {
   const [currentChatId, setCurrentChatId] = useState(null);
   const [width, setWidth] = useState(300);
   const [profileImageUrl, setProfileImageUrl] = useState("");
+  const [showModal, setShowModal] = useState(false); // 모달 상태 추가
+  const [repositories, setRepositories] = useState([]); // Repositories 상태 추가
 
   useEffect(() => {
-    // 프로필 이미지 URL 백엔드에서 가져오기
     fetch("https://your-backend-api/profile-url")
       .then((response) => response.json())
       .then((data) => setProfileImageUrl(data.url))
@@ -66,15 +70,34 @@ function App() {
     setWidth(newWidth);
   };
 
+  const fetchRepositories = async (githubUrl) => {
+    try {
+      const username = githubUrl.split("github.com/")[1]; // URL에서 username 추출
+      const response = await fetch(`https://api.github.com/users/${username}/repos`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setRepositories(data); // Repository 상태 업데이트
+      } else {
+        alert("Failed to fetch repositories. Please check the GitHub URL.");
+      }
+    } catch (error) {
+      console.error("Error fetching repositories:", error);
+    }
+  };
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Introduce />} />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/main"
           element={
             <div style={{ display: "flex", height: "100vh" }}>
               <LeftPane
+                activeChat={activeChat}
+                setActiveChat={setActiveChat} // setActiveChat 전달
                 savedChats={savedChats}
                 setSavedChats={setSavedChats}
                 createNewChat={createNewChat}
@@ -83,11 +106,17 @@ function App() {
                 deleteChat={deleteChat}
                 width={width}
                 onResize={handleResize}
-                profileImageUrl={profileImageUrl} // 프로필 이미지 URL 전달
+                profileImageUrl={profileImageUrl}
+                openRepositoryModal={() => setShowModal(true)} // 모달 열기 함수 전달
+                repositories={repositories} // Repository 상태 전달
+                setRepositories={setRepositories}
               />
               <RightPane
                 activeChat={activeChat}
                 setActiveChat={setActiveChat}
+                fetchRepositories={fetchRepositories} // Repository fetch 함수 전달
+                showModal={showModal}
+                setShowModal={setShowModal}
               />
             </div>
           }
